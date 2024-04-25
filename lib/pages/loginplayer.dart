@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:testflutter/api/api.dart';
 import 'package:testflutter/api/header.dart';
 import 'package:testflutter/global.dart';
 import 'package:testflutter/models/usercount.dart';
 import 'package:testflutter/pages/index.dart';
-import '../../api/api.dart';
+import 'package:testflutter/pages/signup.dart';
 
 class loginplayerpage extends StatefulWidget {
   const loginplayerpage({super.key});
@@ -22,11 +20,9 @@ class _loginplayerpage extends State<loginplayerpage> {
   final passwordcontroller = TextEditingController();
   var checkswitch = false;
 
-  // TextEditingController _controller = TextEditingController();
-
+  @override
   void initState() {
     super.initState();
-    // _controller.text = AppShareData.localStorage.getString("username") ?? "";
   }
 
   @override
@@ -35,9 +31,8 @@ class _loginplayerpage extends State<loginplayerpage> {
       backgroundColor: Colors.black,
       body: SafeArea(
           child: Column(
-        // crossAxisAlignment: CrossAxisAlignment,
         children: [
-          Container(
+          SizedBox(
             width: 440,
             child: Image.asset(
               "assets/netflix_logo.png",
@@ -66,7 +61,6 @@ class _loginplayerpage extends State<loginplayerpage> {
               filled: true,
               fillColor: Colors.grey,
               hintText: " 電子郵件或電話號碼",
-              // labelText: AppShareData.localStorage.getString("username")
             ),
           ),
           const SizedBox(
@@ -119,7 +113,16 @@ class _loginplayerpage extends State<loginplayerpage> {
                 width: 260,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Fluttertoast.showToast(
+                      msg: "救救我啊我救我",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.grey,
+                      textColor: Colors.black,
+                      fontSize: 16.0);
+                },
                 child:
                     const Text("需要幫忙?", style: TextStyle(color: Colors.white)),
               ),
@@ -152,7 +155,10 @@ class _loginplayerpage extends State<loginplayerpage> {
               const Text("New to Netflix?",
                   style: TextStyle(color: Colors.grey, fontSize: 20)),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => signupPage()));
+                  },
                   child: const Text("立即註冊",
                       style: TextStyle(color: Colors.white, fontSize: 20)))
             ],
