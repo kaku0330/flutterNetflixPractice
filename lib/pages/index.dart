@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:testflutter/pages/commingsoon.dart';
 import 'package:testflutter/pages/download.dart';
 import 'package:testflutter/pages/item1.dart';
@@ -136,7 +137,7 @@ class _indexpage extends State<indexpage> {
                                                         selected =
                                                             _list2[index];
                                                       });
-                                                      print(_list2[index]);
+
                                                       Navigator.of(context)
                                                           .pop();
                                                     },
@@ -336,6 +337,16 @@ class _indexpage extends State<indexpage> {
       'assets/g.jpg',
       'assets/h.jpg'
     ];
+    List<String> imagename = [
+      '這是一隻柴柴',
+      '進擊的巨人',
+      '鬼滅之刃:無限列車',
+      '咒術迴戰',
+      '我忘了這動畫叫甚麼',
+      '86－不存在的戰區－',
+      '來自深淵',
+      '文豪野犬'
+    ];
     return List.generate(8, (index) {
       return Padding(
         padding: const EdgeInsets.all(8.0),
@@ -348,8 +359,14 @@ class _indexpage extends State<indexpage> {
           child: InkWell(
             borderRadius: BorderRadius.circular(8.0),
             onLongPress: () {
-              //  _globalKey.currentState
-              //      .showSnackBar(SnackBar(content: Text("動畫名字")));
+              Fluttertoast.showToast(
+                  msg: imagename[index],
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.CENTER,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.grey,
+                  textColor: Colors.black,
+                  fontSize: 16);
             },
           ),
         ),

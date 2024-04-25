@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/pages/index.dart';
+import 'package:testflutter/pages/loginplayer.dart';
 // import 'package:flutter/widgets.dart';
 import 'global.dart';
 
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Image.asset("assets/netflix_logo.png"),
             onEnd: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const indexpage()));
+                  builder: (BuildContext context) => const loginplayerpage()));
             },
           ),
         ),
