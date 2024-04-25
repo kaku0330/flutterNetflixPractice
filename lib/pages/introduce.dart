@@ -39,7 +39,7 @@ class _introducepage extends State<introducepage> {
         Container(
           width: 10.0,
           height: 10.0,
-          margin: EdgeInsets.symmetric(horizontal: 5.0),
+          margin: const EdgeInsets.symmetric(horizontal: 5.0),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: _currentPage == i ? Colors.red : Colors.grey,
@@ -56,8 +56,8 @@ class _introducepage extends State<introducepage> {
   @override
   Widget build(BuildContext context) {
     var children = <Widget>[];
-    children.add(introducepage1());
-    children.add(introducepage2());
+    children.add(const introducepage1());
+    children.add(const introducepage2());
 
     return SafeArea(
         child: Column(
@@ -69,7 +69,7 @@ class _introducepage extends State<introducepage> {
               width: 150,
               height: 100,
             ),
-            SizedBox(
+            const SizedBox(
               width: 180,
             ),
             TextButton(
@@ -83,7 +83,7 @@ class _introducepage extends State<introducepage> {
                       textColor: Colors.black,
                       fontSize: 16.0);
                 },
-                child: Text(
+                child: const Text(
                   "Privacy Help",
                   style: TextStyle(
                       color: Colors.white,
@@ -100,7 +100,7 @@ class _introducepage extends State<introducepage> {
           ),
         ),
         _buildPageIndicator(),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SizedBox(
@@ -113,12 +113,12 @@ class _introducepage extends State<introducepage> {
                         const loginplayerpage()));
               }
             },
-            child: Text(
-              "SIGN IN",
-              style: TextStyle(color: Colors.white),
-            ),
             style: TextButton.styleFrom(
               backgroundColor: checkcolor,
+            ),
+            child: const Text(
+              "SIGN IN",
+              style: TextStyle(color: Colors.white),
             ),
           ),
         )

@@ -156,8 +156,10 @@ class _loginplayerpage extends State<loginplayerpage> {
                   style: TextStyle(color: Colors.grey, fontSize: 20)),
               TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => signupPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const signupPage()));
                   },
                   child: const Text("立即註冊",
                       style: TextStyle(color: Colors.white, fontSize: 20)))

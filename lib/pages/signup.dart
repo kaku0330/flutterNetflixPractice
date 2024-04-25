@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:testflutter/models/useradd.dart';
+
+import '../api/api.dart';
+import '../api/header.dart';
 
 class signupPage extends StatefulWidget {
   const signupPage({super.key});
@@ -25,10 +29,10 @@ class _signupPage extends State<signupPage> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back),
+                icon: const Icon(Icons.arrow_back),
                 color: Colors.white,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 105,
               ),
               Image.asset(
@@ -37,7 +41,7 @@ class _signupPage extends State<signupPage> {
                 height: 80,
                 alignment: Alignment.centerLeft,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 70,
               ),
               TextButton(
@@ -51,7 +55,8 @@ class _signupPage extends State<signupPage> {
                         textColor: Colors.black,
                         fontSize: 16.0);
                   },
-                  child: Text("Help", style: TextStyle(color: Colors.white)))
+                  child:
+                      const Text("Help", style: TextStyle(color: Colors.white)))
             ],
           ),
           const SizedBox(
@@ -85,7 +90,10 @@ class _signupPage extends State<signupPage> {
           SizedBox(
             width: 400,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                loginCheck(
+                    context, accountcontroller.text, passwordcontroller.text);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
               ),
@@ -101,5 +109,29 @@ class _signupPage extends State<signupPage> {
         ],
       )),
     );
+  }
+}
+
+void loginCheck(BuildContext context, String account, String password) async {
+  Map<String, dynamic> queryParams = {
+    'username': account,
+    'password': password,
+  };
+  Response value = await CallApi(url: '/signup')
+      .post(queryParams, PlantHeaders().setPlantIDHeader(""));
+
+  if (value.status == 200) {
+    Useradd data = Useradd.fromJson(value.data);
+    if (data.username == account) {
+      Fluttertoast.showToast(
+          msg: "註冊成功",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.grey,
+          textColor: Colors.black,
+          fontSize: 16.0);
+      Navigator.of(context).pop(true);
+    }
   }
 }

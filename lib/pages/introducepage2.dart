@@ -17,10 +17,10 @@ class _introducepage2 extends State<introducepage2> {
           width: 400,
           height: 400,
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
-        Text(
+        const Text(
           "渴望的話就跟本柴一樣點SIGN IN吧",
           style: TextStyle(
               color: Colors.white,

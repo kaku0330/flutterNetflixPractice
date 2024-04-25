@@ -38,29 +38,30 @@ class _notificationpage extends State<notificationpage> {
                                 context,
                                 PageRouteBuilder(
                                     transitionDuration:
-                                        Duration(milliseconds: 300),
+                                        const Duration(milliseconds: 300),
                                     // 指定 pageBuilder
                                     pageBuilder: (_, __, ___) =>
-                                        comingsoonpage(),
+                                        const comingsoonpage(),
                                     // 指定 transitionsBuilder
                                     transitionsBuilder:
                                         (_, animation, __, child) {
                                       return SlideTransition(
                                           position: Tween<Offset>(
-                                                  begin: Offset(-1.0, 0.0),
-                                                  end: Offset(0.0, 0.0))
+                                                  begin:
+                                                      const Offset(-1.0, 0.0),
+                                                  end: const Offset(0.0, 0.0))
                                               .animate(animation),
                                           child: child);
                                     }));
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             color: Colors.white,
                           )),
-                      SizedBox(
+                      const SizedBox(
                         width: 110,
                       ),
-                      Text(
+                      const Text(
                         "通知",
                         style: TextStyle(color: Colors.white, fontSize: 40),
                       )
@@ -154,7 +155,7 @@ List<SizedBox> checkimage() {
       child: Row(
         children: [
           Container(
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             width: 120,
             height: 70,
             decoration: BoxDecoration(
@@ -178,9 +179,9 @@ List<SizedBox> checkimage() {
                         singlemovie.textData2!,
                         style: const TextStyle(color: Colors.white),
                       ),
-                      Text(
+                      const Text(
                         "4月24號",
-                        style: const TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ],
                   ),

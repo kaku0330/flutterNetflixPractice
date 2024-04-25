@@ -140,7 +140,7 @@ class _comingsoonpage extends State<comingsoonpage> {
                 ),
                 Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.notifications,
                       color: Colors.white,
                       size: 40,
@@ -156,7 +156,7 @@ class _comingsoonpage extends State<comingsoonpage> {
                 ),
                 Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.share,
                       color: Colors.white,
                       size: 40,
@@ -174,7 +174,7 @@ class _comingsoonpage extends State<comingsoonpage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -183,22 +183,22 @@ class _comingsoonpage extends State<comingsoonpage> {
                         color: Colors.grey.withOpacity(0.5), fontSize: 15),
                     textAlign: TextAlign.left,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
-                  Text("鬼莊園",
+                  const Text("鬼莊園",
                       style: TextStyle(color: Colors.white, fontSize: 35)),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
                       "劇情描述一家七口買下古老的豪宅希爾山莊，打算待上一陣子後即將房屋整頓拋售，藉此大賺一筆，沒想到入住成了惡夢的開始，每個人的未來皆受此影響，影集穿插不少倒敘畫面，以過去和現在的片段交互敘事，有別於一般恐怖電影，不僅營造氛圍技術一流，更著重於角色塑造。影集推出後獲得諸多好評，爛番茄新鮮度目前為 93 %。",
                       maxLines: 3,
                       style: TextStyle(color: Colors.grey.withOpacity(0.5))),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
-                  Text("不祥●嚇人●黑暗●感動人心●恐怖片●懸疑推理片●驚悚片",
+                  const Text("不祥●嚇人●黑暗●感動人心●恐怖片●懸疑推理片●驚悚片",
                       style: TextStyle(color: Colors.white, fontSize: 15))
                 ],
               ),

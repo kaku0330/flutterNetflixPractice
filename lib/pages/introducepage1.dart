@@ -17,10 +17,10 @@ class _introducepage1 extends State<introducepage1> {
           width: 400,
           height: 400,
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
-        Text(
+        const Text(
           "你渴望力量嗎",
           style: TextStyle(
               color: Colors.white,
